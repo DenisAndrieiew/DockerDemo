@@ -18,13 +18,13 @@ public class MainController {
 
     @GetMapping("/getAllUsers")
     public List<User> getListOfAllUsers() {
-        log.info("request as /getListOfAllUsers");
+        log.info("request at /getListOfAllUsers");
         return userService.findAll();
     }
 
     @PostMapping(value = "/addNewUser")
     public void addNewUser(@RequestBody(required = false) User newUser) {
-        log.info("request as /addNewUser\n user: {}", newUser);
+        log.info("request at /addNewUser\n user: {}", newUser);
         userService.save(newUser);
     }
 }

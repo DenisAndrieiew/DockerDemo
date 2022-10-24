@@ -1,7 +1,9 @@
 package com.andrieiew.docker.demo;
 
 import com.andrieiew.docker.demo.controller.MainController;
-import org.junit.jupiter.api.Assertions;
+
+import static org.junit.jupiter.api.Assertions.*;
+
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -13,6 +15,11 @@ public class SmokeTest {
 
     @Test
     public void contextLoadTest() {
-        Assertions.assertNotNull(controller);
+        assertNotNull(controller);
+    }
+
+    @Test
+    void contextLoads() {
+        assertTrue(true);
     }
 }

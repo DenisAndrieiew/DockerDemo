@@ -51,10 +51,6 @@ public class WebTest {
         users.add(secondUser);
     }
 
-    @Test
-    public void testAddNewUser() {
-
-    }
 
     @Test
     public void testGetAllUsers() {
