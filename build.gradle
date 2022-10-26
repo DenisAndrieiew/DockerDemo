@@ -2,11 +2,17 @@ plugins {
     id 'org.springframework.boot' version '2.6.2'
     id 'io.spring.dependency-management' version '1.0.11.RELEASE'
     id 'java'
+    id 'application'
 }
 
 group = 'com.andrieiew.docker'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '11'
+bootJar {
+    archiveFileName ='demo-docker.jar'
+}
+
+mainClassName = 'com.andrieiew.docker.demo.DemoApplication'
 
 configurations {
     compileOnly {
