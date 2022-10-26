@@ -15,9 +15,10 @@ RUN chmod -R 777 build
 RUN cd build && gradle build --no-daemon -q
 
 FROM alpine:3.14 as runner2
+# ATTENTION! No spaces between variable name, '=' and var value
 ARG profile=prod
 ENV API_KEY=runnerKey
-ENV DB_HOST = pg
+ENV DB_HOST=pg
 ENV DB_NAME=postgres
 ENV DB_USERNAME=postgres
 ENV DB_PASSWORD=12345
@@ -35,5 +36,5 @@ COPY --from=builder2 /home/gradle/build/build/libs/$jarFilename $appFolder/
 WORKDIR /$appFolder
 # Launch app
 ENTRYPOINT ["java", "-jar",\
-                 "$jarFilename",\
-                 "--spring.profiles.active=$activeProfile"]
+                 "demo-docker.jar",\
+                 "--spring.profiles.active=prod"]
